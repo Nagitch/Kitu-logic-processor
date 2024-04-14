@@ -1,9 +1,9 @@
 version: '3.8'
 services:
   dev-kitu-logic-processor:
-    build: .
+    build: ./kitu-logic-processor
     volumes:
       - ./kitu-logic-processor:/usr/src/kitu-logic-processor
     ports:
       - "4000:4000"
-    command: cargo run
+    command: cargo watch -x run

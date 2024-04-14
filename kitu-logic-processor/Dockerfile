@@ -1,11 +1,12 @@
 # Rust公式イメージをベースにする
-FROM rust:1.62
+FROM rust:1.77
 
 # 作業ディレクトリの設定
 WORKDIR /usr/src/kitu-logic-processor
 
 # ビルド時に必要なパッケージをインストール
 RUN apt-get update && apt-get install -y git
+RUN cargo install cargo-watch
 
 # 以降のコマンドを作業ディレクトリで実行
 COPY . .
