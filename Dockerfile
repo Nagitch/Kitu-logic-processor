@@ -2,7 +2,7 @@
 FROM rust:1.77
 
 # 作業ディレクトリの設定
-WORKDIR /usr/src/kitu-logic-processor
+WORKDIR /usr/src
 
 # ビルド時に必要なパッケージをインストール
 RUN apt-get update && apt-get install -y git

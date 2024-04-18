@@ -1,9 +1,11 @@
 version: '3.8'
 services:
   dev-kitu-logic-processor:
-    build: ./kitu-logic-processor
+    container_name: dev-kitu-logic-processor
+    build: .
+    working_dir: /usr/src/kitu-logic-processor
     volumes:
-      - ./kitu-logic-processor:/usr/src/kitu-logic-processor
+      - .:/usr/src/kitu-logic-processor
     ports:
       - "4000:4000"
     command: cargo watch -x run
