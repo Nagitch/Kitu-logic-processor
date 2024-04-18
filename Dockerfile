@@ -7,6 +7,7 @@ WORKDIR /usr/src
 # ビルド時に必要なパッケージをインストール
 RUN apt-get update && apt-get install -y git
 RUN cargo install cargo-watch
+RUN cargo install wasm-pack
 
 # 以降のコマンドを作業ディレクトリで実行
 COPY . .
