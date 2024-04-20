@@ -1,3 +1,4 @@
+# Run this script on docker conatiner to build the project for all supported targets
 # TODO: Unsupported targets
 
 # Windows
