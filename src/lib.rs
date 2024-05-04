@@ -3,12 +3,8 @@ pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 
-pub fn multiply(a: i32, b: i32) -> i32 {
-    a * b
-}
-
-pub fn subtruct(a: i32, b: i32) -> i32 {
-    a - b
+pub fn ping() -> String {
+    "pong".to_string()
 }
 
 // プラットフォーム固有のコード: 条件付きコンパイルを使用
@@ -48,27 +44,7 @@ mod tests {
     }
 
     #[test]
-    fn test_multiply() {
-        assert_eq!(multiply(4, 5), 20);
-    }
-
-    #[test]
     fn test_add_negative_numbers() {
         assert_eq!(add(-1, -1), -2);
-    }
-
-    #[test]
-    fn test_multiply_negative_numbers() {
-        assert_eq!(multiply(-3, 5), -15);
-    }
-
-    #[test]
-    fn test_multiply_zero() {
-        assert_eq!(multiply(0, 5), 0);
-    }
-
-    #[test]
-    fn test_subtruct() {
-        assert_eq!(subtruct(5, 3), 2);
     }
 }
