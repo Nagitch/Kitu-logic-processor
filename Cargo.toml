@@ -7,6 +7,8 @@ edition = "2021"
 
 [dependencies]
 rosc = "0.10.1"
+pest = "2.7.10"
+pest_derive = "2.7.10"
 
 [target.'cfg(target_os = "ios")'.dependencies]
 # iOS特有の依存関係をここに記述

@@ -1,6 +1,7 @@
 extern crate kitu_logic_processor;
 extern crate rosc;
 
+
 use rosc::{OscType, OscPacket};
 
 #[test]
@@ -13,6 +14,7 @@ fn test_ping_integration() {
     assert_eq!(kitu_logic_processor::ping(), "pong".to_string());
 }
 
+// rosc integration test
 #[test]
 fn test_rosc_functional() {
     let osc_bytes: [u8; 16] = [
@@ -40,4 +42,10 @@ fn test_rosc_functional() {
             println!("OSC Bundle: {:?}", bundle);
         }
     }
+}
+
+// pest integration test
+#[test]
+fn test_pest_functional() {
+    kitu_logic_processor::pest_parse();
 }

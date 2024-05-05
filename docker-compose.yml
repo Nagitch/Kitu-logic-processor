@@ -7,5 +7,5 @@ services:
       - .:/usr/src
     ports:
       - "4000:4000"
-    command: cargo watch -x build
-    # command: cargo watch -x build -x test
+    command: cargo watch # keep the container running, to remote debug inside the container
+    # command: cargo watch -x build -x 'test -- --nocapture' # if won't remote debug, use this command
