@@ -1,7 +1,7 @@
 extern crate kitu_logic_processor;
 extern crate rosc;
 
-
+use kitu_logic_processor::run_actor_system;
 use rosc::{OscType, OscPacket};
 
 #[test]
@@ -44,8 +44,8 @@ fn test_rosc_functional() {
     }
 }
 
-// pest integration test
-#[test]
-fn test_pest_functional() {
-    kitu_logic_processor::pest_parse();
+#[actix::test]
+async fn test_my_actor() {
+    let res = run_actor_system().await;
+    assert_eq!(res, "Pong");
 }

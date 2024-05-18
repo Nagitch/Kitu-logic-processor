@@ -3,7 +3,22 @@ extern crate pest;
 #[macro_use]
 extern crate pest_derive;
 
+pub mod actor;
+
+use actix::prelude::*;
+pub use actor::{MyActor, Ping};
 use pest::Parser;
+
+pub fn start_actor_system() -> Addr<MyActor> {
+    let addr = MyActor.start();
+    addr
+}
+
+// 既存のランタイムを使用して非同期コードを実行するためのヘルパー関数
+pub async fn run_actor_system() -> String {
+    let addr = start_actor_system();
+    addr.send(Ping).await.unwrap()
+}
 
 #[derive(Parser)]
 #[grammar = "ident.pest"]
